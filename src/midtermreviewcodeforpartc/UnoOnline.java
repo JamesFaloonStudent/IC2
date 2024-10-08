@@ -35,21 +35,7 @@ public class UnoOnline
     public static void main(String[] args) 
      {
        UnoOnline newPortal = new UnoOnline();
-       int userCount=0;//keep track of number of users for array
-       Scanner sc = new Scanner(System.in);
-       System.out.println("please enter your desired user name:");
-       String userName = sc.nextLine();
-       PasswordValidator pv = new mainPasswordValidator();
-       String password = pv.checkPassword();
-       User newUser = new User(userName, password);
-       newPortal.users[userCount] = newUser;
-       userCount++;
-       System.out.println("New User Added");
-       System.out.println("UserName: " + userName);
-       System.out.println("Password: just kidding can't show password");
-       
-       
-       
+       newPortal.run();      
     }
      /**
      * method that takes in the User's name and chosen password
@@ -59,6 +45,22 @@ public class UnoOnline
      * 2. The password must contain at least one "special character"
      * 
      */
+    
+    
+    private void run() {
+        int userCount=0;//keep track of number of users for array
+       Scanner sc = new Scanner(System.in);
+       System.out.println("please enter your desired user name:");
+       String userName = sc.nextLine();
+       PasswordValidator pv = new mainPasswordValidator();
+       String password = pv.checkPassword();
+       User newUser = new User(userName, password);
+       users[userCount] = newUser;
+       userCount++;
+       System.out.println("New User Added");
+       System.out.println("UserName: " + userName);
+       System.out.println("Password: just kidding can't show password");  
+    }
 //    private void run()
 //    {
 //        int userCount=0;//keep track of number of users for array
